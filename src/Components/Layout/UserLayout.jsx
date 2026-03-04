@@ -1,7 +1,7 @@
 // src/Components/Layout/UserLayout.jsx
 import { useSelector } from "react-redux";
 import BottomNavbar from "../../Pages/LandingPage/BottomNavbar";
-import Navbar from "../../Pages/LandingPage/Navbar";
+
 
 const UserLayout = ({ children }) => {
   const user = useSelector((state) => state.user.currentUser);

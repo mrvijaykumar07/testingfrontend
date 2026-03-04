@@ -18,20 +18,20 @@ const BACKEND_URL = config.BACKEND_URL;
 const MobileSideMenu = () => {
   const dispatch = useDispatch();
   const { currentUser, isLoggedIn, profileImage } = useSelector(
-    (state) => state.user
+    (state) => state.user,
   );
 
   // ✅ Universal Login redirect (Google OAuth)
   const handleLogin = () => {
     // Works properly on Firefox, Chrome, Edge, Safari
-    window.open(`${BACKEND_URL}/api/v1/auth/google`, "_self", "noopener,noreferrer");
+    window.open(`${BACKEND_URL}/auth/google`, "_self", "noopener,noreferrer");
   };
 
   // ✅ Safe Logout (Cross-Browser + Double-Sided Cookie Clear)
   const handleLogout = async () => {
     try {
       // 🔹 Step 1: Call backend to clear httpOnly cookie
-      const res = await fetch(`${BACKEND_URL}/api/v1/auth/logout`, {
+      const res = await fetch(`${BACKEND_URL}/logout`, {
         method: "POST",
         credentials: "include", // ensures cookie is sent
         headers: {
@@ -78,17 +78,19 @@ const MobileSideMenu = () => {
             Update Profile
           </button>
         )}
-<div className="w-16 h-16 my-2 bg-white rounded-full flex items-center justify-center overflow-hidden">
-  {currentUser?.profile_picture_url ? (
-    <img
-      src={currentUser.profile_picture_url}
-      alt="Profile"
-      className="w-full h-full object-cover rounded-full"
-    />
-  ) : (
-    <FaUser size={34} className="text-black" />
-  )}
-</div>
+
+        <div className="w-16 h-16 my-2 bg-white rounded-full flex items-center justify-center overflow-hidden">
+          {profileImage ? (
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="w-full h-full object-cover rounded-full"
+              onError={(e) => (e.target.style.display = "none")}
+            />
+          ) : (
+            <FaUser size={34} className="text-black" />
+          )}
+        </div>
 
         {isLoggedIn ? (
           <>
@@ -106,51 +108,7 @@ const MobileSideMenu = () => {
       </div>
 
       {/* Menu Links */}
-      <div className="mt-4 space-y-5 text-[15px] text-[#1E1E1E]">
-        <a
-          href="https://oyorooms.sng.link/Alpi0/c4bl"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 hover:text-[#5E4B8B]"
-        >
-          <HiDownload size={20} />
-          Download Our App
-        </a>
-
-        <Link
-          to="/admin"
-          className="flex items-center gap-3 hover:text-[#5E4B8B]"
-        >
-          <MdAdminPanelSettings size={20} />
-          Admin
-        </Link>
-
-        <Link
-          to="/help"
-          className="flex items-center gap-3 hover:text-[#5E4B8B]"
-        >
-          <MdContactPhone size={20} />
-          Contact Us
-        </Link>
-
-        <div className="flex items-center gap-3 hover:text-[#5E4B8B]">
-          <MdOutlinePolicy size={20} />
-          Guest Policy
-        </div>
-
-        <div className="flex items-center gap-3 hover:text-[#5E4B8B]">
-          <MdLanguage size={20} />
-          Switch Language
-        </div>
-
-        <a
-          href="tel:+917854001224"
-          className="flex items-center gap-3 hover:text-[#5E4B8B]"
-        >
-          <FaPhoneAlt size={18} />
-          Call Us: +91 7854001224
-        </a>
-      </div>
+      <div className="mt-4 space-y-5 text-[15px] text-[#1E1E1E]"></div>
 
       {/* Login / Logout Button */}
       <div className="pt-4">

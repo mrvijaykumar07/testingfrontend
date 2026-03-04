@@ -12,7 +12,7 @@ import AuthProvider from "./Components/AuthProvider";
 // ✅ Layout and QR page import
 import UserLayout from "./Components/Layout/UserLayout";
 
-import Main_AdminDashboard from "./Pages/AdminPortal/Main_AdminDashboard";
+
 
 
 
