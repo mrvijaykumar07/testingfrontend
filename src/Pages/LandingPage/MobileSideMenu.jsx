@@ -24,7 +24,7 @@ const MobileSideMenu = () => {
   // ✅ Universal Login redirect (Google OAuth)
   const handleLogin = () => {
     // Works properly on Firefox, Chrome, Edge, Safari
-    window.open(`${BACKEND_URL}/auth/google`, "_self", "noopener,noreferrer");
+    window.open(`${BACKEND_URL}/api/v1/auth/google`, "_self", "noopener,noreferrer");
   };
 
   // ✅ Safe Logout (Cross-Browser + Double-Sided Cookie Clear)
