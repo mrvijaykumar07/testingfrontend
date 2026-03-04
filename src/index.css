@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "../src/styles/variable.css";
+
+/* 📰 Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* 🏃 Boy Runner */
+@keyframes runner {
+  0% {
+    left: -60px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.animate-runner {
+  animation: runner 2.2s ease-in-out infinite;
+  position: absolute;
+}
+
+/* 🔵 Progress Trail */
+@keyframes progress-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-progress-bar {
+  animation: progress-bar 2.2s ease-in-out infinite;
+}
+
+/* 🚫 Hide Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🎯 Hide Swiper Buttons */
+.hide-swiper-buttons .swiper-button-next,
+.hide-swiper-buttons .swiper-button-prev {
+  display: none !important;
+}
