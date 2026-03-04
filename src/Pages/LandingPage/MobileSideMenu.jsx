@@ -31,7 +31,7 @@ const MobileSideMenu = () => {
   const handleLogout = async () => {
     try {
       // 🔹 Step 1: Call backend to clear httpOnly cookie
-      const res = await fetch(`${BACKEND_URL}/logout`, {
+      const res = await fetch(`${BACKEND_URL}/api/v1/auth/logout`, {
         method: "POST",
         credentials: "include", // ensures cookie is sent
         headers: {
