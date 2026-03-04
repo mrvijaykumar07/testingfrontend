@@ -5,12 +5,12 @@ const config = {
   SECRET_KEY: import.meta.env.VITE_SECRET_KEY || "vgfytuftyfcftycgfhc",
   BACKEND_URL:
     import.meta.env.VITE_BACKEND_URL ||
-    "https://qpix-backend-service-v2-be-928486661285.asia-south1.run.app",
+    "https://testingbackend-ljdf.onrender.com",
 
 
 
   FRONTEND_ORIGIN:
-    import.meta.env.VITE_FRONTEND_ORIGIN || "http://localhost:5173",
+    import.meta.env.VITE_FRONTEND_ORIGIN || "https://testingfrontend-tau.vercel.app",
   NODE_ENV: import.meta.env.MODE || "development",
   port: 5000,
 };
