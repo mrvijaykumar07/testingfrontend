@@ -12,7 +12,7 @@ const config = {
   FRONTEND_ORIGIN:
     import.meta.env.VITE_FRONTEND_ORIGIN || "https://testingfrontend-tau.vercel.app",
   NODE_ENV: import.meta.env.MODE || "development",
-  port: 5000,
+  port: 8080,
 };
 
 export default config;

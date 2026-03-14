@@ -42,7 +42,7 @@ const MobileSideMenu = () => {
 
       // 🔹 Step 2: Also clear cookie manually from frontend (some browsers keep cached cookies)
       document.cookie =
-        "jwtToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=None; Secure";
+        "qpix_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=None; Secure";
 
       // 🔹 Step 3: Clear Redux, localStorage, sessionStorage
       dispatch(logoutUser());
