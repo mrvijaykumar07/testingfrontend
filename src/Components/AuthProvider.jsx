@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
 
   const fetchUserImage = async () => {
     try {
-      const res = await fetch(`${BACKEND_URL}/api/v1/user/photo`, {
+      const res = await fetch(`${BACKEND_URL}/api/v1/users/photo`, {
         credentials: "include",
         headers: {
           Accept: "image/*",

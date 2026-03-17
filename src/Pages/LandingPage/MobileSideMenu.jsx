@@ -22,11 +22,14 @@ const MobileSideMenu = () => {
   );
 
   // ✅ Universal Login redirect (Google OAuth)
-  const handleLogin = () => {
-    // Works properly on Firefox, Chrome, Edge, Safari
-    window.open(`${BACKEND_URL}/api/v1/auth/google`, "_self", "noopener,noreferrer");
-  };
+  // const handleLogin = () => {
+  //   // Works properly on Firefox, Chrome, Edge, Safari
+  //   window.open(`${BACKEND_URL}/api/v1/auth/google`, "_self", "noopener,noreferrer");
+  // };
 
+  const handleLogin = () => {
+  window.location.href = `${BACKEND_URL}/api/v1/auth/google`;
+};
   // ✅ Safe Logout (Cross-Browser + Double-Sided Cookie Clear)
   const handleLogout = async () => {
     try {
